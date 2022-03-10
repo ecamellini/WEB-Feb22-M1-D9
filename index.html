@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epicode Calendar</title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<!--
+
+    REQUIREMENTS GATHERING / ANALYSIS / DISCOVERY PHASE
+    (Analysts / Business Analysts / UX Designers)
+    All the stakeholders involved in the project must be included in this phase.
+
+    Let's think just the first features we need to make it functional.
+    MVP: Minimum Viable Product.
+    Then we will build the rest of the features in future releases, based on users feedback.
+
+    FEATURES & WHY:
+    - Visualize the days of the current month, because I need to be able to select a day
+    - Select a day, because I want to setup a meeting on that day (I can change day and select another one whenever I want)
+    - Adding an event to the selected day, after selecting time & name, so that I can remember it
+    - Visualize the appointments/meetings for the selected day (the ones I already added)
+
+
+        Usually we can write these in the form of user stories, for example:
+        - As a user of the calendar, I need to be able to select a day, because I want to setup a meeting on that day
+
+    ASSUMPTION:
+    - To start with, let's just build a simple calendar for events only (no reminders, no other things)
+    - At the momenth, let's just assume that we always have 31 days
+        (I don't want to deal with real dates/months at the moment - it's complex in JS)
+    - Let's not handle errors at the moment: not a problem if we add two events with the same time & name
+
+    NICE TO HAVE (FOR FUTURE RELEASES):
+    - Having also reminders implemented
+    - Exporting/importing events
+    - etc....
+
+    ------------------------------------------------------------------------------------------------
+
+    SOFTWARE DESIGN PHASE:
+    ( Software architects / software developers )
+
+    Design the way in which we are going to build the software: main components,
+    functions/modules etc. etc.
+
+    In this case, we're gonna talk about:
+
+    MAIN HTML ELEMENTS:
+    - title for the calendar (h1)
+    - divs for the days, and a div for the month (a container)
+    - div for the area where to input event details & save an event
+    - h1 / h3 to title this section & the inputs
+    - input tags to input event details (time input, text input for time & name) & a button to save
+    - appointments for the day section: title & a list of events (<ul> or similar)
+
+    MAIN STYLES/CLASSES:
+    - main style for the body: dark background, font family, font color, align ceter, etc.
+    - days: a highlight when selected (border, etc.)
+    - month: a border etc. to make visible the fact that it is surrounding the days
+    - title: same color (green for example), uppercase, bold
+    - inputs & button: same color as the titles, etc.
+    - event in the list of events
+
+    MAIN JS FUNCTIONS:
+    Usually we say: event -> what happens
+
+    - when clicking on save -> take input values & add a new event to the current day
+    - when clicking on a day
+        -> show that the day is selected/highlighted & also un-highlight the previous one
+        -> show the events already saved for that day (hide/don't show the ones for the previously selected day)
+
+ -->
+
+<body>
+    <script src="index.js" type="text/javascript" />
+</body>
+
+</html>
