@@ -109,7 +109,26 @@ function displayMeetingsForTheDay() {
 
 
 function createNewMeeting() {
+    // 1) We get the value from the two inputs
+    let title = document.getElementById('meeting-description').value
+    let time = document.getElementById('meeting-time').value
 
+    // 2) We create a new meeting object
+    let newMeeting = {
+        title: title,
+        time: time
+    }
+
+    // 3) We get the selected day number
+    let selectedDayNode = document.querySelector('.selected-day')
+    let dayNumber = parseInt(selectedDayNode.innerText)
+
+    // 4) We identify the meetings list for the day using the dayNumber as index
+    //      and we add as last element the new one (it's an array, we can use push)
+    calendar[dayNumber - 1].push(newMeeting)
+
+    // 5) We want to display it right away, so we call also the function to do it
+    displayMeetingsForTheDay()
 }
 
 function onLoad() {
