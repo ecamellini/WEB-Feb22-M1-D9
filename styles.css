@@ -1,19 +1,64 @@
 body {
-    background-color: black;
+    background-color: rgb(16,19,53);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    max-width: 1268px;
+    margin: 0 auto;
 }
-
 .heading {
-    color: lightgreen;
-    text-transform: uppercase;
+    color: white;
     text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #month {
-    border: 1px solid white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(140,60,140);
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 58%;
 }
 
 .day {
+    background-color: rgb(16,19,53);
+    display: inline-block;
+    width: 97px;
+    height: 97px;
+    text-align: center;
+    line-height: 97px;
+    font-size: large;
+    border-color: rgb(140,60,140);
+    border-style: solid;
+    border-width: 2px;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.day:hover {
+    background-color: rgb(16,19,53);
+    border-color: rgb(180,100,180);
+    cursor: pointer;
+}
+
+/* MEETINGS AREA */
+#meetings {
+    vertical-align: top;
+    display: inline-block;
+    width: 35%;
+    min-height: 200px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+#meetings h2 {
     color: white;
-    display: inline;
-    padding: 50px;
+    border-bottom: solid 3px rgb(40,30,150);
+    padding-bottom: 16px;
+    padding-top: 24px;
+    text-transform: uppercase;
 }
