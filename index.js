@@ -10,22 +10,24 @@ const daysCount = 31 // Assmption: always display 31 days
 
 // MODEL A DAY
 // Let's suppose that in a day we can have as many appointments as we want...
-let firstDay = [
-    { day: 12, time: "12:00", title: "Lunch" },
-    { day: 12, time: "14:00", title: "Gym" },
-    { day: 12, time: "16:00", title: "Coffee with Paul" }
-]
-let secondDay = [
-    { day: 12, time: "12:00", title: "Lunch" },
-]
+// let firstDay = [
+//     { day: 12, time: "12:00", title: "Lunch" },
+//     { day: 12, time: "14:00", title: "Gym" },
+//     { day: 12, time: "16:00", title: "Coffee with Paul" }
+// ]
+// let secondDay = [
+//     { day: 12, time: "12:00", title: "Lunch" },
+// ]
 
 // MODEl THE MONTH
 // It will be an array of days...
-let calendar = [
-    firstDay,
-    secondDay
-    //etc etc
-]
+// let calendar = [
+//     firstDay,
+//     secondDay
+//     ...
+// ]
+
+let calendar = [] // We start with an empty calendar
 
 // EXAMPLE
 // Let's get the title of the first meeting of the second day
@@ -58,6 +60,9 @@ function displayDaysOfTheMonth() {
 
         // 4) Append it to the parent
         monthNode.appendChild(dayNode)
+
+        // 5) we create the corresponding array of meetings, empty
+        calendar[day - 1] = []
     }
 }
 
@@ -126,6 +131,8 @@ function createNewMeeting() {
     // 4) We identify the meetings list for the day using the dayNumber as index
     //      and we add as last element the new one (it's an array, we can use push)
     calendar[dayNumber - 1].push(newMeeting)
+    // The push works only if we already have an array...
+    // That's why we initialize to empty array when creating the days
 
     // 5) We want to display it right away, so we call also the function to do it
     displayMeetingsForTheDay()
