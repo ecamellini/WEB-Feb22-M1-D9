@@ -1,3 +1,19 @@
 body {
     background-color: black;
 }
+
+.heading {
+    color: lightgreen;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#month {
+    border: 1px solid white;
+}
+
+.day {
+    color: white;
+    display: inline;
+    padding: 50px;
+}
