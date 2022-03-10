@@ -91,7 +91,11 @@
     </div>
     <div id="meetings">
         <h2>Meetings for the day</h2>
-
+        <div id="meeting-creation">
+            <input type="time" id="meeting-time" value="09:00" />
+            <input type="text" id="meeting-description" placeholder="Enter meeting title..." />
+            <input type="button" value="Create" onclick="createNewMeeting()" />
+        </div>
         <div id="meetings-list">
             <!--
         A MEETING WILL BE SOMETHING LIKE...

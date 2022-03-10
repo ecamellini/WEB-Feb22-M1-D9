@@ -107,6 +107,11 @@ function displayMeetingsForTheDay() {
     meetingsListNode.replaceChildren(listNode)
 }
 
+
+function createNewMeeting() {
+
+}
+
 function onLoad() {
     // I can put more than one thing
     displayDaysOfTheMonth()
