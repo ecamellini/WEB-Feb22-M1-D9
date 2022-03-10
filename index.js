@@ -18,13 +18,34 @@ function displayDaysOfTheMonth() {
         // 2) Create a new div (the day div)
         let dayNode = document.createElement('div')
 
-        // 3) Add the text/the class (we CUSTOMIZE IT)
+        // 3) We customize it
         dayNode.innerText = day
         dayNode.classList.add('day')
+        dayNode.addEventListener('click', selectDay) // We want it to be called later, and so no brackets ()
+        // ANOTHER WAY TO DO IT: dayNode.onclick = selectDay
 
         // 4) Append it to the parent
         monthNode.appendChild(dayNode)
     }
+}
+
+function selectDay(event) {
+    let clickedDayNode = event.target
+    // Exactly if we get a node in any other way, it's a node
+    // We selected a node (the first step of the usual process...)
+
+    // Get the previously selected day
+    let previouslySelectedDay = document.querySelector('.selected-day')
+
+
+    // Remove the selection from the previous day
+    if (previouslySelectedDay !== null) {
+        previouslySelectedDay.classList.remove('selected-day')
+    }
+
+    // Add the selection to the newly clicked day
+    clickedDayNode.classList.add('selected-day')
+
 }
 
 
