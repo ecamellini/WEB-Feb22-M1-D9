@@ -1,5 +1,37 @@
 const daysCount = 31 // Assmption: always display 31 days
 
+// MODELING AN APPOINTMENT
+// -- Time
+// -- Day
+// -- Name / Title
+//
+// Let's assume we deal only with strings, no dates or timestamps at the moment
+// { day: 12, time: "12:00", title: "Lunch" }
+
+// MODEL A DAY
+// Let's suppose that in a day we can have as many appointments as we want...
+let firstDay = [
+    { day: 12, time: "12:00", title: "Lunch" },
+    { day: 12, time: "14:00", title: "Gym" },
+    { day: 12, time: "16:00", title: "Coffee with Paul" }
+]
+let secondDay = [
+    { day: 12, time: "12:00", title: "Lunch" },
+]
+
+// MODEl THE MONTH
+// It will be an array of days...
+let calendar = [
+    firstDay,
+    secondDay
+    //etc etc
+]
+
+// EXAMPLE
+// Let's get the title of the first meeting of the second day
+// Given the calendar
+// console.log(calendar[1][0].title)
+
 function displayDaysOfTheMonth() {
     // 1) Get the div where we want to add the days as children: the parent
     let monthNode = document.getElementById("month")
@@ -46,8 +78,34 @@ function selectDay(event) {
     // Add the selection to the newly clicked day
     clickedDayNode.classList.add('selected-day')
 
+    displayMeetingsForTheDay()
 }
 
+function displayMeetingsForTheDay() {
+    // Inside calendar we have our meeting data...
+    // GET THE MEETINGS FOR THE DAY WE SELECTED
+    let selectedDayNode = document.querySelector('.selected-day')
+    let dayNumber = parseInt(selectedDayNode.innerText) // Needed because we cannot use a string to index an array
+
+    let arrayOfMeetings = calendar[dayNumber - 1]
+
+    // LET'S DISPLAY THEM:
+    // 1) Target the div where we want to display the meetings
+    let meetingsListNode = document.getElementById('meetings-list')
+
+    // 2) We create elements....
+    let listNode = document.createElement('ul')
+
+    for (let meeting of arrayOfMeetings) {
+        let listItemNode = document.createElement('li')
+
+        listItemNode.innerText = meeting.time + " - " + meeting.title
+
+        listNode.appendChild(listItemNode)
+    }
+
+    meetingsListNode.replaceChildren(listNode)
+}
 
 function onLoad() {
     // I can put more than one thing
